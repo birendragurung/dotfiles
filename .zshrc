@@ -80,8 +80,7 @@ plugins=(
 	zsh-autosuggestions
  	man 
 	nvm
- 	docker
- kubectl minikube aws pip pipenv kubectx)
+ kubectl minikube aws pip pipenv kubectx zoxide)
 
 
 # Automatically run nvm use. ref: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm#nvmrc-autoload
@@ -140,7 +139,10 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/user/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
 #
 # Default editor
@@ -153,7 +155,7 @@ export PATH=$PATH:$HOME/.yarn/bin
 # For profiling zsh
 #zprof
 
-RPS1='$(kubectx_prompt_info)' #REF: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectx
+# RPS1='$(kubectx_prompt_info)' #REF: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectx
 
 export TERM=xterm-256color
 

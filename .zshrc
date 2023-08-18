@@ -87,7 +87,7 @@ plugins=(
 zstyle ':omz:plugins:nvm' autoload yes
 
 # enables the lazy-loading mode
-#zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy yes
 
 source $ZSH/oh-my-zsh.sh
 

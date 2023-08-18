@@ -1,5 +1,4 @@
 # For profiling zsh, ref: https://dev.to/thraizz/fix-slow-zsh-startup-due-to-nvm-408k
-#zmodload zsh/zprof
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -80,7 +79,13 @@ plugins=(
 	zsh-autosuggestions
  	man 
 	nvm
- kubectl minikube aws pip pipenv kubectx zoxide)
+ 	kubectl 
+ 	minikube 
+ 	aws 
+ 	pip 
+ 	pipenv 
+ 	kubectx 
+)
 
 
 # Automatically run nvm use. ref: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm#nvmrc-autoload
@@ -130,12 +135,13 @@ export LESS='-R --mouse'
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# This block is not required when oh-my-zsh plugin for nvm is activated
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Init starship.rs
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # pnpm
 export PNPM_HOME="/home/user/.local/share/pnpm"
@@ -151,9 +157,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.yarn/bin
 
 #[[ -s "/home/user/.gvm/scripts/gvm" ]] && source "/home/user/.gvm/scripts/gvm"
-
-# For profiling zsh
-#zprof
 
 # RPS1='$(kubectx_prompt_info)' #REF: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectx
 

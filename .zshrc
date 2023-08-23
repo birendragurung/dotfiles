@@ -85,7 +85,7 @@ plugins=(
  	pip 
  	pipenv 
  	kubectx 
-)
+ docker)
 
 
 # Automatically run nvm use. ref: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm#nvmrc-autoload

@@ -85,7 +85,7 @@ plugins=(
  	pip 
  	pipenv 
  	kubectx 
- docker)
+ docker zoxide)
 
 
 # Automatically run nvm use. ref: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm#nvmrc-autoload
@@ -141,7 +141,7 @@ export PATH="$HOME/.local/bin:$PATH"
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Init starship.rs
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # pnpm
 export PNPM_HOME="/home/user/.local/share/pnpm"
@@ -155,12 +155,13 @@ esac
 export EDITOR=/usr/bin/vim
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.yarn/bin
+export PATH=$PATH:$HOME/.config/emacs/bin
 
 #[[ -s "/home/user/.gvm/scripts/gvm" ]] && source "/home/user/.gvm/scripts/gvm"
 
 # RPS1='$(kubectx_prompt_info)' #REF: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectx
 
-export TERM=xterm-256color
+# export TERM=tmux-256color
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

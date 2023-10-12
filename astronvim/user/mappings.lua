@@ -7,7 +7,6 @@ return {
   -- first key is the mode
   n = {
     -- second key is the lefthand side of the map
-
     -- navigate buffer tabs with `H` and `L`
     L = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
@@ -48,7 +47,7 @@ return {
   i = {
     ["<A-h>"] = "<C-o>^",
     ["<A-l>"] = "<C-o>$",
-    ["<C-v>;"] = "<C-o>$",
-    ["<A-;>"] = "<C-o><A-S-a>"
+    ["<A-j>"] = "<C-o>:m .+1<CR><esc>==",
+    ["<A-k>"] = "<C-o>:m .-2<CR><esc>==",
   }
 }

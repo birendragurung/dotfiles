@@ -9,9 +9,6 @@ return {
     local get_icon = require("astronvim.utils").get_icon
     return {
       defaults = {
-        find_files = {
-          hidden = true
-        },
         file_ignore_patterns = {
           "node_modules", "build", "dist", "yarn.lock", "package-lock.json"
         },
@@ -37,6 +34,11 @@ return {
           n = { q = actions.close },
         },
       },
+      pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--ignore", "--hidden", "--glob", "!**/.git/*" },
+        },
+      }
     }
   end,
   config = require "plugins.configs.telescope",

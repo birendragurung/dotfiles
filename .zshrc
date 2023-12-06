@@ -85,7 +85,7 @@ plugins=(
  	pip 
  	pipenv 
  	kubectx 
- docker zoxide)
+ docker  zoxide)
 
 
 # Automatically run nvm use. ref: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm#nvmrc-autoload
@@ -156,6 +156,7 @@ export EDITOR=/usr/bin/vim
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/.yarn/bin
 export PATH=$PATH:$HOME/.config/emacs/bin
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 #[[ -s "/home/user/.gvm/scripts/gvm" ]] && source "/home/user/.gvm/scripts/gvm"
 
@@ -165,3 +166,9 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# added by Snowflake SnowSQL installer
+export PATH=/home/user/bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

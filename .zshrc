@@ -113,6 +113,11 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# store device related exports on ~/.zshalias file and import them here
+if [ -f ~/.zshalias ]; then
+  source ~/.zshalias
+fi
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -132,43 +137,6 @@ alias scli="npx sequelize-cli"
 
 # https://superuser.com/questions/1491077/mouse-scrolling-less-pager-output-in-tmux-session
 export LESS='-R --mouse'
-
-export PATH="$HOME/.local/bin:$PATH"
-
-# This block is not required when oh-my-zsh plugin for nvm is activated
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Init starship.rs
-# eval "$(starship init zsh)"
-
-# pnpm
-export PNPM_HOME="/home/user/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-#
-# Default editor
-export EDITOR=/usr/bin/vim
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/.yarn/bin
-export PATH=$PATH:$HOME/.config/emacs/bin
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
-
-#[[ -s "/home/user/.gvm/scripts/gvm" ]] && source "/home/user/.gvm/scripts/gvm"
-
-# RPS1='$(kubectx_prompt_info)' #REF: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectx
-
-# export TERM=tmux-256color
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# added by Snowflake SnowSQL installer
-export PATH=/home/user/bin:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"

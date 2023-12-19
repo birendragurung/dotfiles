@@ -79,13 +79,17 @@ plugins=(
 	zsh-autosuggestions
  	man 
 	nvm
- 	kubectl 
- 	minikube 
- 	aws 
- 	pip 
- 	pipenv 
- 	kubectx 
- docker  zoxide)
+ 	kubectl
+ 	minikube
+ 	aws
+ 	pip
+ 	pipenv
+ 	kubectx
+ 	docker
+ 	zoxide 
+ 	vim-interaction 
+ 	vi-mode
+)
 
 
 # Automatically run nvm use. ref: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm#nvmrc-autoload
@@ -134,6 +138,12 @@ alias px="pnpx"
 alias tx="tmuxinator"
 alias ncli="node src/bin/cli"
 alias scli="npx sequelize-cli"
+
+# set environment variables here
+
+# for vi mode in zsh, change cursor for normal/insert mode
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
 
 # https://superuser.com/questions/1491077/mouse-scrolling-less-pager-output-in-tmux-session
 export LESS='-R --mouse'

@@ -142,11 +142,15 @@ alias scli="npx sequelize-cli"
 # set environment variables here
 
 # for vi mode in zsh, change cursor for normal/insert mode
+# REF: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/vi-mode/README.md#cursor-styles
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
 
+# enable mouse scrolling in less command
 # https://superuser.com/questions/1491077/mouse-scrolling-less-pager-output-in-tmux-session
 export LESS='-R --mouse'
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
